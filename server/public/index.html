@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake E-commerce Store</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Fake E-commerce Store</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Area to display products -->
+    <div id="product-display">
+        <!-- Products will be populated here dynamically using JavaScript -->
+    </div>
+    
+    <!-- Area to display potential hackers -->
+    <h2>Potential Hackers</h2>
+    <div id="potential-hackers">
+        <!-- List of potential hackers will be populated here dynamically using JavaScript -->
+    </div>
+
+        <!-- Add more product listings here -->
+        <h2>Feedback Form</h2>
+        <form onsubmit="submitFeedback()">
+            <textarea name="feedback"></textarea>
+            <input type="hidden" name="honeypot" value="">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="response"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Fake E-commerce Store</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
