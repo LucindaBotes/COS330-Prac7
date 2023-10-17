@@ -12,7 +12,7 @@ html {
   body {
     font-size: 1.8rem;
     line-height: 1.618;
-    max-width: 38em;
+    max-width: 65em;
     margin: auto;
     color: #4a4a4a;
     background-color: #f9f9f9;
@@ -67,7 +67,7 @@ html {
   
   p {
     margin-top: 0px;
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 2.5rem; */
   }
   
   small, sub, sup {
@@ -120,7 +120,7 @@ html {
     height: auto;
     max-width: 100%;
     margin-top: 0px;
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 2.5rem; */
   }
   
   /* Pre and Code */
@@ -224,3 +224,58 @@ html {
     margin-bottom: 0.5rem;
     font-weight: 600;
   }
+
+  /* Styling for the main container */
+#product-display {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* This creates 5 columns */
+  gap: 20px; /* Gap between each product card */
+  padding: 20px; /* Some padding around the grid */
+}
+
+/* Styling for each product card */
+.product {
+  border: 1px solid #e0e0e0; /* Simple border around each card */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensures contents (like the image) do not exceed the card boundaries */
+  transition: transform 0.2s; /* Optional: Smooth scale effect on hover */
+}
+.product-sec {
+  padding: 20px;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.product:hover {
+  transform: scale(1.05); /* Optional: Slightly enlarges the product card on hover for a subtle effect */
+}
+
+/* Styling for the product image */
+.picture {
+  width: 100%; /* Image takes the full width of its container */
+  object-fit: cover; /* Ensures the aspect ratio of the image is maintained */
+  height: 50%; /* The image will occupy half the height of the product card */
+  display: block; /* Ensures there's no extra space below the image */
+}
+
+/* Styling for the product name/title */
+.name {
+  font-size: 1.2rem; /* Size of the product name */
+  margin: 10px 0; /* Some margin for spacing */
+}
+
+/* Styling for the product description */
+.description {
+  font-size: 0.9rem; /* Smaller font size for the description */
+  color: #777; /* Slightly grayed out color for a subtle look */
+}
+
+/* Styling for the product price */
+.price {
+  font-size: 1rem; /* Standard font size */
+  font-weight: bold; /* Bold font weight to emphasize the price */
+  color: #333; /* Slightly darker color for contrast */
+  margin: 10px 0; /* Some margin for spacing */
+}

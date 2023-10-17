@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake E-commerce Store</title>
+    <title>My E-commerce Store</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
-        <h1>Fake E-commerce Store</h1>
+        <h1>My E-commerce Store</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#product-display">Products</a></li>
+                <li><a href="#potential-hackers">Potential Hackers</a></li>
+                <li><a href="#Feedback">Feedback Form</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +31,7 @@
     </div>
 
         <!-- Add more product listings here -->
-        <h2>Feedback Form</h2>
+        <h2 id="Feedback">Feedback Form</h2>
         <form onsubmit="submitFeedback()">
             <textarea name="feedback"></textarea>
             <input type="hidden" name="honeypot" value="">

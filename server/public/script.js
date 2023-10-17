@@ -44,11 +44,15 @@ async function fetchProducts() {
         for (const product of products) {
             productsHTML += `
                 <section class="product">
-                    <img src="${product.image}" alt="${product.name}">
-                    <h2>${product.name}</h2>
-                    <p>${product.description}</p>
-                    <p class="price">${product.price}</p>
-                    <button>Add to Cart</button>
+                    <img class="picture" src="${product.image}" alt="${product.name}">
+                    <div class="product-sec">
+                        <div class="product-info">
+                            <h2 class="name">${product.name}</h2>
+                            <p class="description">${product.description}</p>
+                            <p class="price">${product.price}</p>
+                        </div>
+                        <button>Add to Cart</button>
+                    </div>
                 </section>
             `;
         }
@@ -67,7 +71,15 @@ async function fetchPotentialHackers() {
         const hackersDisplay = document.getElementById('potential-hackers');
         hackersDisplay.innerHTML = hackers.map(hacker => `
             <div>
-                IP: ${hacker.ip}, UserAgent: ${hacker.userAgent}, Time: ${hacker.time}
+                <ul>
+                    <li> IP: ${hacker.ip}</li>
+                    <ul>
+                    <li>Time: ${hacker.time}</li>
+                    <li>City: ${hacker.location.city}</li>
+                    <li>Region: ${hacker.location.region}</li>
+                    <li>Country: ${hacker.location.country}</li>
+                    </ul>     
+                </ul>
             </div>
         `).join('');
     } catch (error) {
