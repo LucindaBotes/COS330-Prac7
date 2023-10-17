@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     fetchProducts();
     fetchPotentialHackers();
+    const potentialHackersIL = document.getElementById('navItem');
+    if (fetchPotentialHackers() == 1) {
+        potentialHackersIL.style.display = 'none';
+    }
     const feedbackForm = document.querySelector('form');
     const responseContainer = document.getElementById('response');
     feedbackForm.after(responseContainer);
@@ -35,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
 async function fetchProducts() {
     try {
         const response = await fetch('/data');
-        console.log('Response:', response);
         const products = await response.json();
 
         const productDisplay = document.getElementById('product-display');
@@ -67,7 +70,13 @@ async function fetchPotentialHackers() {
     try {
         const response = await fetch('/hackers');
         const hackers = await response.json();
-
+        const h2 = document.getElementById('hackers-title');
+        console.log('No hackers');
+        if (hackers == null) {
+            h2.textContent = '';
+            return 1;
+        }
+        h2.textContent = 'Potential Hackers';
         const hackersDisplay = document.getElementById('potential-hackers');
         hackersDisplay.innerHTML = hackers.map(hacker => `
             <div>
@@ -89,9 +98,5 @@ async function fetchPotentialHackers() {
 
 
 function submitFeedback() {
-    // This function will be triggered upon form submission due to the onsubmit attribute.
-    // However, since we have added an event listener to the form's submit event, 
-    // this function doesn't need to contain any logic. 
-    // It's here to prevent the default form submission behavior.
     return false; 
 }
