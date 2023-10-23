@@ -68,11 +68,9 @@ realApp.get('/hackers', (req, res) => {
 });
 
 const realServer = realApp.listen(443, '0.0.0.0', () => {
-    console.log('Server running on port 443');
 });
 
 const honeypotServer = honeypotApp.listen(80, '0.0.0.0', () => {
-    console.log('Honeypot running on port 80');
 });
 
 const getLocationData = async (ip) => {
